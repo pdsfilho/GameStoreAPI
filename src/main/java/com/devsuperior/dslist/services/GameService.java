@@ -16,9 +16,9 @@ public class GameService {
 	private GameRepository gameRepository;
 	
 	public List <GameMinDTO> findAll(){
-		List<Game> gameList = gameRepository.findAll();
-		List <GameMinDTO> gameDtoList = gameList.stream().map(x -> new GameMinDTO(x)).toList();
-		return gameDtoList;
+		List<Game> result = gameRepository.findAll();
+		List <GameMinDTO> gameDto = result.stream().map(x -> new GameMinDTO(x)).toList();
+		return gameDto;
 	}
 
 }
